@@ -4,8 +4,6 @@
 
 Built with **React + TypeScript + Puter AI**.
 
-![Resumind Preview](https://github.com/kavi-vish/ai-resume-checker/blob/main/public/images/screenshot.png)
-
 ## ✨ Features
 
 - Upload PDF resume → Automatic conversion to image for better AI analysis
@@ -20,10 +18,6 @@ Built with **React + TypeScript + Puter AI**.
 - Clean, modern, and responsive UI
 - Real-time AI feedback using Puter AI (Claude / Gemini)
 
-## 🚀 Live Demo
-
-[Try it here](https://your-deployed-link.com) *(Add your deployed link)*
-
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18 + TypeScript + Vite
@@ -35,6 +29,8 @@ Built with **React + TypeScript + Puter AI**.
 
 ## 📸 Screenshots
 <img width="1898" height="910" alt="image" src="https://github.com/user-attachments/assets/02810c3a-678a-4974-a847-126c4ed0d7f2" />
+<img width="1897" height="911" alt="image" src="https://github.com/user-attachments/assets/bcae7baa-353d-4ab9-85e8-08f1579d447d" />
+
 
 ## 📁 Project Structure
 
