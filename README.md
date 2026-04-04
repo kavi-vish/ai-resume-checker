@@ -1,87 +1,106 @@
-# Welcome to React Router!
+# AI Resume Checker
 
-A modern, production-ready template for building full-stack React applications using React Router.
+**Smart AI-powered resume analyzer** that gives you detailed feedback, ATS score, and improvement suggestions based on your target job.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+Built with **React + TypeScript + Puter AI**.
 
-## Features
+![Resumind Preview](https://github.com/kavi-vish/ai-resume-checker/blob/main/public/images/screenshot.png)
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## ✨ Features
 
-## Getting Started
+- Upload PDF resume → Automatic conversion to image for better AI analysis
+- Job-specific analysis (Company Name, Job Title, Job Description)
+- **ATS Score** with detailed breakdown
+- Categorized feedback:
+  - Tone & Style
+  - Content
+  - Structure
+  - Skills
+- Beautiful resume preview with original PDF download
+- Clean, modern, and responsive UI
+- Real-time AI feedback using Puter AI (Claude / Gemini)
 
-### Installation
+## 🚀 Live Demo
 
-Install the dependencies:
+[Try it here](https://your-deployed-link.com) *(Add your deployed link)*
 
-```bash
-npm install
-```
+## 🛠️ Tech Stack
 
-### Development
+- **Frontend**: React 18 + TypeScript + Vite
+- **Routing**: React Router v7
+- **Styling**: Tailwind CSS
+- **AI & Backend**: Puter (AI Chat, File System, KV Store)
+- **PDF Processing**: `pdf.js`
+- **Icons & Animations**: Custom + Tailwind
 
-Start the development server with HMR:
+## 📸 Screenshots
+<img width="1898" height="910" alt="image" src="https://github.com/user-attachments/assets/02810c3a-678a-4974-a847-126c4ed0d7f2" />
 
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+## 📁 Project Structure
 
 ```bash
-docker build -t my-app .
+src/
+├── routes/                 # Page components (Upload, Resume, etc.)
+├── components/             # Reusable UI components
+│   ├── Summary.tsx
+│   ├── Details.tsx
+│   ├── ATS.tsx
+│   ├── ScoreGauge.tsx
+│   └── FileUploader.tsx
+├── lib/
+│   ├── puter.ts            # Puter SDK integration
+│   ├── pdf2img.ts          # PDF to Image converter
+│   └── utils.ts
+├── types.ts                # TypeScript interfaces
+└── constants.ts            # AI instructions & config
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+🛠️ Installation & Setup
+Prerequisites
 
-The containerized application can be deployed to any platform that supports Docker, including:
+Node.js (v18 or higher)
+A Puter account
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+Steps
 
-### DIY Deployment
+Clone the repositoryBashgit clone https://github.com/kavi-vish/ai-resume-checker.git
+cd ai-resume-checker
+Install dependenciesBashnpm install
+Configure Puter
+Make sure ~/lib/puter.ts is correctly set up with your Puter authentication.
+Ensure the ai.feedback() method uses a vision-capable model.
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+Run locallyBashnpm run dev
+Open http://localhost:5173
 
-Make sure to deploy the output of `npm run build`
+How It Works
 
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+User enters Company Name, Job Title, and Job Description
+Uploads a PDF resume
+The app converts PDF → high-quality image
+AI analyzes the resume image against the job description
+Returns structured JSON with scores and actionable tips
+Displays beautiful preview + detailed feedback
 
-## Styling
+Key Technologies Used
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Vision AI: Uses converted resume image for better analysis
+Structured Output: Strict prompting to get consistent JSON format
+File Handling: Puter FS + KV for storing resumes and results
 
----
+Contributing
+Contributions are welcome! Feel free to:
 
-Built with ❤️ using React Router.
+Open an issue for bugs or feature requests
+Submit pull requests for improvements
+Improve the AI prompt for better feedback quality
+
+License
+This project is open source and available under the MIT License.
+Acknowledgments
+
+Built using Puter – All-in-one cloud platform
+Inspired by modern resume optimization tools
+Thanks to the open-source community for pdf.js and React ecosystem
+
+
+Made with ❤️ to help job seekers land their dream roles
