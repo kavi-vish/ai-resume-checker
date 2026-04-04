@@ -1,22 +1,21 @@
-export function formatSize(bytes: number): string {
-    if (!Number.isFinite(bytes) || bytes <= 0) {
-        return "0 KB";
-    }
+import {type ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
 
-    const units = ["KB", "MB", "GB"] as const;
-    const base = 1024;
-
-    let value = bytes / base;
-    let unitIndex = 0;
-
-    while (value >= base && unitIndex < units.length - 1) {
-        value /= base;
-        unitIndex += 1;
-    }
-
-    const formattedValue =
-        value >= 100 ? value.toFixed(0) : value >= 10 ? value.toFixed(1) : value.toFixed(2);
-
-    return `${Number(formattedValue)} ${units[unitIndex]}`;
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
 }
-export const generateUUID=()=>crypto.randomUUID();
+
+export function formatSize(bytes: number): string {
+    if (bytes === 0) return '0 Bytes';
+
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+
+    // Determine the appropriate unit by calculating the log
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    // Format with 2 decimal places and round
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+export const generateUUID = () => crypto.randomUUID();
